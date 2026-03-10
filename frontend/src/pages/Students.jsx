@@ -55,7 +55,7 @@ const handleDelete = async (id) => {
         <tbody>
 
           {filteredStudents.map((student) => (
-            <tr key={student.id}>
+            <tr key={student._id}>
               <td className="border p-2">
   {student.photo && (
     <img
