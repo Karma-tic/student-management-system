@@ -1,0 +1,5 @@
+function Results() {
+  return <h2 className="text-2xl font-bold">Results Management</h2>
+}
+
+export default Results
