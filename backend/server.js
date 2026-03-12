@@ -12,7 +12,10 @@ const app = express()
 
 // Middleware FIRST
 app.use(cors({
-  origin: "https://student-management-system-nu-rose.vercel.app/",
+  origin: [
+    "http://localhost:5173",
+    "https://student-management-system-nu-rose.vercel.app"
+  ],
   methods: ["GET","POST","PUT","DELETE"],
   credentials: true
 }))
