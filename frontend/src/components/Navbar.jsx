@@ -1,25 +1,40 @@
+import { useNavigate } from "react-router-dom"
+
 function Navbar() {
-  return (
-    <div className="h-16 bg-white shadow flex items-center justify-between px-8">
 
-      <h1 className="text-xl font-semibold">
-        Student Management System
-      </h1>
+const navigate = useNavigate()
 
-      <div className="flex items-center gap-4">
+const handleLogout = () => {
 
-        <span className="text-gray-600">
-          Admin
-        </span>
 
-        <button className="bg-red-500 text-white px-4 py-1 rounded">
-          Logout
-        </button>
+localStorage.removeItem("token")
 
-      </div>
+navigate("/login")
 
-    </div>
-  )
+
+}
+
+return (
+
+
+<div className="flex justify-end items-center p-4 bg-white shadow">
+
+  <span className="mr-4 font-medium">
+    Admin
+  </span>
+
+  <button
+    onClick={handleLogout}
+    className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+  >
+    Logout
+  </button>
+
+</div>
+
+
+)
+
 }
 
 export default Navbar
